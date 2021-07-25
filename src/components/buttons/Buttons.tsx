@@ -1,12 +1,18 @@
 import React, { FC } from 'react';
 
-interface ButtonProps {
-  name?: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+export enum ButtonType {
+  Number,
+  Operator
+}
+
+type ButtonProps = React.HTMLProps<HTMLButtonElement> & {
+  buttonType?: ButtonType;
+  name: string;
   // onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 const Buttons: FC<ButtonProps> = ({
+  buttonType = ButtonType.Operator,
   name,
   onClick,
 }) => (

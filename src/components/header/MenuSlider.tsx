@@ -3,7 +3,6 @@ import { Spin as Hamburger } from 'hamburger-react';
 
 const MenuSlider: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
-  const visible = 'invisible';
 
   return (
     <div>
@@ -14,7 +13,7 @@ const MenuSlider: React.FC = () => {
           console.log('SLIDER CLOSE');
         }
       }} />
-      <div className={visible}>
+      {/* <div className={visible}>
         <p>계산기</p>
         <ul>
           <li>표준</li>
@@ -39,7 +38,7 @@ const MenuSlider: React.FC = () => {
           <li>압력</li>
           <li>각도</li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };

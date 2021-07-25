@@ -1,31 +1,21 @@
 @charset "UTF-8";
 
 /* COMMON */
-.body { margin: 0px; padding: 0px; box-sizing: border-box; }
-#root {
-  .calculator { width: 450px; background-color: gainsboro; }
-}
-.visible { display: block; }
-.invisible { display: none; }
+* { margin:0px; padding: 0px; box-sizing: border-box; }
+.calculator { width: 438px; margin: 0px auto; background-color: #323232; align-items: center; padding: 10px; }
 
-.hamburger-react { display: inline-block; justify-content: center; }
-.calc_name { display: inline-block; justify-content: center; }
+/* MENU */
+.header { height: 70px; display: flex; align-items: center; color: #ffffff; }
+.title { margin-left: 10px; font-size: 20px; }
 
 /* DISPLAY */
-.display_space { width: 410px; height: 100px; justify-content: center; padding: 10px; text-align: right; background-color: #323232; margin: 10px 10px 0px 10px; font-weight: bold; font-size: 35px; color: #FFFFFF; }
+.display { background-color: #ffffff; width: 412px; height: 100px; border-radius: 10px; font-size: 50px; text-align: right; margin: 2px; border: none; padding: 25px 20px; }
 
 /* BUTTON */
+button { width: 100px; height: 60px; justify-content: center; align-items: center; font-weight: bold; font-size: 20px; margin: 2px; border: none; border-radius: 10px; }
+
 .memory_buttons {
   button {
-    background-color: #323232; color: #ffffff; width: calc(410px / 5); height: 30px;
-  }
-}
-
-.button_space {
-  margin: 5px;
-  div {
-    button {
-      width: 100px; height: 60px; justify-content: center; text-align: center; font-weight: bold; font-size: 20px; margin: 5px;
-    }
+    width: calc(396px / 5); height: 30px; font-size: 15px;
   }
 }

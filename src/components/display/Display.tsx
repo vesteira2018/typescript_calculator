@@ -1,17 +1,13 @@
 import React from 'react';
-import MemoryButtons from '@/components/buttons/MemoryButtons';
 
 interface DisplayProps {
-  value: string;
+  value: number;
 }
 
 const Display: React.FC<DisplayProps> = ({
   value,
 }) => (
-  <div className='display_space'>
-    <div>{value}</div>
-    <MemoryButtons />
-  </div>
+  <div className='display'>{value}</div>
 );
 
 export default React.memo(Display);
