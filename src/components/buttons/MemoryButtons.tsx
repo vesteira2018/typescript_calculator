@@ -8,8 +8,8 @@ const MemoryButtons: React.FC = () => {
 
   return (
     <div className='memory_buttons'>
-      <Button name='MC' onClick={handleClick} />
-      <Button name='MR' onClick={handleClick} />
+      <Button name='MC' onClick={handleClick} disabled={true} />
+      <Button name='MR' onClick={handleClick} disabled={true} />
       <Button name='M+' onClick={handleClick} />
       <Button name='M-' onClick={handleClick} />
       <Button name='MS' onClick={handleClick} />

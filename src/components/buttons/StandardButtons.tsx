@@ -1,5 +1,5 @@
 import React from 'react';
-import Button, { ButtonType } from '@/components/buttons/Buttons';
+import Button from '@/components/buttons/Buttons';
 import MemoryButtons from '@/components/buttons/MemoryButtons';
 import { OperatorType } from '@/assets/logic/calculate_logic';
 
@@ -26,33 +26,33 @@ const StandardCalculator: React.FC<StandardCalcProps> = ({
         <Button name='<' onClick={handleDelete} />
       </div>
       <div className='buttons_std__2'>
-        <Button name='1/x' />
+        <Button name='1/x' onClick={handleOperator(OperatorType.DivideAsX)} />
         <Button name='x²' onClick={handleOperator(OperatorType.Square)} />
         <Button name='√' onClick={handleOperator(OperatorType.Sqrt)} />
         <Button name='÷' onClick={handleOperator(OperatorType.Divide)} />
       </div>
       <div className='buttons_std__3'>
-        <Button buttonType={ButtonType.Number} name='7' onClick={handleNumerical(7)} />
-        <Button buttonType={ButtonType.Number} name='8' onClick={handleNumerical(8)} />
-        <Button buttonType={ButtonType.Number} name='9' onClick={handleNumerical(9)} />
+        <Button name='7' onClick={handleNumerical(7)} />
+        <Button name='8' onClick={handleNumerical(8)} />
+        <Button name='9' onClick={handleNumerical(9)} />
         <Button name='×' onClick={handleOperator(OperatorType.Multiply)} />
       </div>
       <div className='buttons_std__4'>
-        <Button buttonType={ButtonType.Number} name='4' onClick={handleNumerical(4)} />
-        <Button buttonType={ButtonType.Number} name='5' onClick={handleNumerical(5)} />
-        <Button buttonType={ButtonType.Number} name='6' onClick={handleNumerical(6)} />
+        <Button name='4' onClick={handleNumerical(4)} />
+        <Button name='5' onClick={handleNumerical(5)} />
+        <Button name='6' onClick={handleNumerical(6)} />
         <Button name='-' onClick={handleOperator(OperatorType.Subtract)} />
       </div>
       <div className='buttons_std__5'>
-        <Button buttonType={ButtonType.Number} name='1' onClick={handleNumerical(1)} />
-        <Button buttonType={ButtonType.Number} name='2' onClick={handleNumerical(2)} />
-        <Button buttonType={ButtonType.Number} name='3' onClick={handleNumerical(3)} />
+        <Button name='1' onClick={handleNumerical(1)} />
+        <Button name='2' onClick={handleNumerical(2)} />
+        <Button name='3' onClick={handleNumerical(3)} />
         <Button name='+' onClick={handleOperator(OperatorType.Add)} />
       </div>
       <div className='buttons_std__6'>
         <Button name='+ / -' onClick={handleOperator(OperatorType.SwitchSign)} />
-        <Button buttonType={ButtonType.Number} name='0' onClick={handleNumerical(0)} />
-        <Button name='.' />
+        <Button name='0' onClick={handleNumerical(0)} />
+        <Button name='.' onClick={handleOperator(OperatorType.Point)} />
         <Button name='=' onClick={handleOperator(OperatorType.Equals)} />
       </div>
     </div>

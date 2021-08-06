@@ -1,22 +1,17 @@
 import React, { FC } from 'react';
 
-export enum ButtonType {
-  Number,
-  Operator
-}
-
 type ButtonProps = React.HTMLProps<HTMLButtonElement> & {
-  buttonType?: ButtonType;
   name: string;
-  // onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  disabled?: true | false;
 }
 
 const Buttons: FC<ButtonProps> = ({
-  buttonType = ButtonType.Operator,
   name,
   onClick,
+  disabled,
 }) => (
-  <button onClick={onClick}>{name}</button>
+  <button onClick={onClick} disabled={disabled}>{name}</button>
 );
 
 export default React.memo(Buttons);

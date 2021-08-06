@@ -6,6 +6,7 @@ import '@/assets/stylesheets/common.scss';
 
 import Display from '@/components/display/Display';
 import StandardButtons from '@/components/buttons/StandardButtons';
+import EngineeringButtons from '@/components/buttons/EngineeringButtons';
 import Header from '@/components/header/Header';
 import CalculateLogic, { CalculateInput, InputType, OperatorType } from '@/assets/logic/calculate_logic';
 
@@ -29,7 +30,7 @@ const Root: React.FC = () => {
     <div className='calculator'>
       <Header />
       <Display value={state.displayValue} />
-      <StandardButtons
+      <EngineeringButtons
         handleNumerical={handleNumerical}
         handleOperator={handleOperator}
         handleAllClear={handleAllClear}

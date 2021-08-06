@@ -12,6 +12,10 @@ export enum OperatorType {
   Percent = 'percent',
   Square = 'square',
   Sqrt = 'sqrt',
+  DivideAsX = 'divideasx',
+  Point = 'point',
+  Power = 'power',
+  Abs = 'abs',
   SwitchSign = 'switchsign',
 }
 
@@ -20,7 +24,7 @@ export type CalculateInput =
   | { type: InputType.Operator; operator: OperatorType };
 
 export type CalculateState = {
-  displayValue: number;
+  displayValue: string;
 }
 
 export type Operation = {
@@ -85,9 +89,17 @@ const getTotal = (operations: Array<Operation>): number =>
       case OperatorType.Percent:
         return sum * 0.01;
       case OperatorType.Square:
-        return sum * sum;
+        return Math.pow(sum, 2);
       case OperatorType.Sqrt:
         return Math.sqrt(sum);
+      case OperatorType.DivideAsX:
+        return 1 / sum;
+      case OperatorType.Point:
+        return sum;
+      case OperatorType.Power:
+        return Math.pow(sum, operation.value);
+      case OperatorType.Abs:
+        return Math.abs(sum);
       case OperatorType.SwitchSign:
         return -(sum);
     }
@@ -97,15 +109,15 @@ const getState = (inputs: Array<CalculateInput>): CalculateState => {
   const builder = getOperationsBuilder(inputs);
   const { operations } = builder;
   const lastOperation = operations.length ? operations[operations.length - 1] : null;
-  if (!lastOperation) return { displayValue: builder.working.value };
+  if (!lastOperation) return { displayValue: builder.working.value.toString() };
 
   const lastInput = inputs.length ? inputs[inputs.length - 1] : null;
 
   switch (lastOperation.operator) {
     case OperatorType.Equals:
-      return { displayValue: getTotal(operations) };
+      return { displayValue: getTotal(operations).toString() };
     default:
-      return { displayValue: lastInput && lastInput.type === InputType.Numerical ? builder.working.value : getTotal(operations) };
+      return { displayValue: lastInput && lastInput.type === InputType.Numerical ? builder.working.value.toString() : getTotal(operations).toString() };
   }
 };
 

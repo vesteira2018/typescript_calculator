@@ -1,3 +1,8 @@
+// Babel : javascript complier. 입력도 js, 출력도 js
+// 최신 버전의 javascript(ES6, ES7) 문법이 브라우저가 이해하지 못하지 때문에 ES5 이전 문법으로 컴파일하는 역할
+// babel 자체만으로는 아무 것도 동작하지 않지만 plugin을 설치하면 동작한다
+// preset : plugin의 집합체. 기본 제공되는 프리셋으로는 @babel/preset-env, flow, react, typescript가 있다
+
 {
   "presets": [
     "@babel/preset-env",
