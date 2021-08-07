@@ -7,6 +7,8 @@ const MenuSlider: React.FC = () => {
   return (
     <div>
       <Hamburger toggled={isOpen} toggle={setOpen} size={22} onToggle={(toggled) => {
+        // TODO: 이렇게 컴포넌트 내에서 하는 것보단 함수로 따로 분리해서 기능해주는게 좋아요
+        // TODO: 권장하지 않는 방식입니다.
         if (toggled) {
           console.log('SLIDER OPEN');
         } else {
@@ -44,3 +46,5 @@ const MenuSlider: React.FC = () => {
 };
 
 export default React.memo(MenuSlider);
+
+// TODO: 확장성을 위해 더 만드신 것 같네용

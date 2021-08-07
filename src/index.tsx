@@ -14,6 +14,7 @@ const Root: React.FC = () => {
   const [inputs, setInputs] = useState<Array<CalculateInput>>([]);
   const state = CalculateLogic.getState(inputs);
 
+  // TODO: useCallback을 안 쓴 것과 쓴 것의 차이도 직접 해보고 느끼는 게 개발에 도움이 됩니다.
   const handleNumerical = (value: number) => () => {
     setInputs((prev) => [...prev, { type: InputType.Numerical, value }]);
   }
@@ -47,3 +48,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
+
+// TODO: React는 컴포넌트형식의 프레임워크입니다.
+// TODO: 그 의미를 알면 리액트로 개발 시에 좀 더 재밌어 질 거에요.

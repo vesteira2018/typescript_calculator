@@ -37,6 +37,11 @@ type OperationsBuilder = {
   working: Operation;
 };
 
+// TODO: 타입을 다양하게 사용하는 건 잘하셨어요. 하나를 잘 다루는 것도 중요하지만 다양한 경험도 필요합니다
+// TODO: 다만 하나의 파일에 서로 다른 목적성을 띈 것들을 다 집어넣어 관리하는 것과, 하나하나 다 분리해서 관리하는 것
+// TODO: 어떤 차이점이 있는지 알고 개발하시면 더 좋을 것 같습니다
+// TODO: "이게 되네?"라는 느낌은 이제 조금씩 버려야죠.
+
 const getOperationsBuilder = (inputs: Array<CalculateInput>): OperationsBuilder => {
   return inputs.reduce<OperationsBuilder>(
     (builder, input) => {
