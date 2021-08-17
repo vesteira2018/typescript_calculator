@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
-import { Spin as Hamburger } from 'hamburger-react';
 
-const MenuSlider: React.FC = () => {
-  const [isOpen, setOpen] = useState(false);
+interface MenuSliderProps {
+  visible: string;
+}
 
+const MenuSlider: React.FC<MenuSliderProps> = (
+  visible
+) => {
   return (
-    <div>
-      <Hamburger toggled={isOpen} toggle={setOpen} size={22} onToggle={(toggled) => {
-        // TODO: 이렇게 컴포넌트 내에서 하는 것보단 함수로 따로 분리해서 기능해주는게 좋아요
-        // TODO: 권장하지 않는 방식입니다.
-        if (toggled) {
-          console.log('SLIDER OPEN');
-        } else {
-          console.log('SLIDER CLOSE');
-        }
-      }} />
-      {/* <div className={visible}>
+    <div className={`menu-slider ${visible}`}>
+      {/* <div>
         <p>계산기</p>
         <ul>
           <li>표준</li>

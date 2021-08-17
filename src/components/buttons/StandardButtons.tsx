@@ -62,3 +62,5 @@ const StandardCalculator: React.FC<StandardCalcProps> = ({
 export default React.memo(StandardCalculator);
 
 // TODO: buttons 폴더에 불필요하게 반복되는 컴포넌트들이 많은 듯 합니다.
+// <Button name='' onClick={} />
+// name: string, onClick={} => () (handleNumerical, handleOperator)

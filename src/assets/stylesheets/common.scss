@@ -6,11 +6,15 @@
 .calculator { width: 438px; margin: 0px auto; background-color: #323232; align-items: center; padding: 10px; }
 
 /* MENU */
-.header { height: 70px; display: flex; align-items: center; color: #ffffff; }
-.title { margin-left: 10px; font-size: 20px; }
+.header { height: 70px; display: flex; color: #FFFFFF; align-items: center; margin-bottom: 10px; 
+  .title { margin-left: 10px; font-size: 20px; }
+  .menu-slider { background-color: #323232; z-index: 1;
+    ul { list-style: none; }
+  }
+}
 
 /* DISPLAY */
-.display { background-color: #ffffff; width: 412px; height: 100px; border-radius: 10px; font-size: 50px; text-align: right; margin: 2px; border: none; outline: none; padding: 25px 20px; }
+.display { background-color: #FFFFFF; width: 412px; height: 100px; border-radius: 10px; font-size: 50px; text-align: right; margin: 2px; border: none; outline: none; padding: 25px 20px; }
 
 /* BUTTON */
 button {
@@ -26,11 +30,13 @@ button {
 
 .memory_buttons {
   button {
-    width: calc(396px / 5); height: 30px; font-size: 15px; background-color: bisque;
+    width: calc(396px / 5); height: 30px; font-size: 15px; background-color: #FFE4C4;
   }
 }
 
-// TODO: 웹 퍼블리셔를 디자인부터 전부 다 할 일은 많이 없을테지만
-// TODO: 그래도 반응형 웹과 여러가지 스타일을 섞어보면 공부가 만이 될 거 같아요
-// TODO: px가 아닌 em, rem은 뭔지, 왜 쓰는지, vh는 어디에 쓰는지 등등
-// TODO: 색상 같은 것도 왜 white, red, black 등등 이름을 붙이면 되는데 왜 안붙이고 hex code로 많이 짜는건지 등등
+// CSS UNITS
+// em : 부모 tag의 font-size에 몇 배의 font-size를 지정한다.
+// rem (root em) : 최상위 tag에 지정한 것을 기준으로 삼으며 일반적으로 html tag가 최상위 tag이다. default font-size = 16px
+// vh (viewport height) : 현재 실행 중인 스크린 크기에 1/100px 높이 단위
+// vw (viewport width) : 현재 실행 중인 스크린 크기에 1/100px 너비 단위
+// vmin / vmax : viewport의 최대 크기, 최소 크기
