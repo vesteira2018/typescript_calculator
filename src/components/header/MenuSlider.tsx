@@ -4,9 +4,9 @@ interface MenuSliderProps {
   visible: boolean;
 }
 
-const MenuSlider: React.FC<MenuSliderProps> = (
+const MenuSlider: React.FC<MenuSliderProps> = ({
   visible,
-) => {
+}) => {
   return (
     <div className={`menu-slider ${visible ? '' : 'invisible'}`}>
       <div>
