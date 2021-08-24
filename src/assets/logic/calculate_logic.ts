@@ -114,15 +114,15 @@ const getState = (inputs: Array<CalculateInput>): CalculateState => {
   const builder = getOperationsBuilder(inputs);
   const { operations } = builder;
   const lastOperation = operations.length ? operations[operations.length - 1] : null;
-  if (!lastOperation) return { displayValue: builder.working.value.toString() };
+  if (!lastOperation) return { displayValue: builder.working.value.toLocaleString() };
 
   const lastInput = inputs.length ? inputs[inputs.length - 1] : null;
 
   switch (lastOperation.operator) {
     case OperatorType.Equals:
-      return { displayValue: getTotal(operations).toString() };
+      return { displayValue: getTotal(operations).toLocaleString() };
     default:
-      return { displayValue: lastInput && lastInput.type === InputType.Numerical ? builder.working.value.toString() : getTotal(operations).toString() };
+      return { displayValue: lastInput && lastInput.type === InputType.Numerical ? builder.working.value.toLocaleString() : getTotal(operations).toLocaleString() };
   }
 };
 

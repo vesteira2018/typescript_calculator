@@ -32,26 +32,26 @@ const StandardCalculator: React.FC<StandardCalcProps> = ({
         <Button name='÷' onClick={handleOperator(OperatorType.Divide)} />
       </div>
       <div className='buttons_std__3'>
-        <Button name='7' onClick={handleNumerical(7)} />
-        <Button name='8' onClick={handleNumerical(8)} />
-        <Button name='9' onClick={handleNumerical(9)} />
+        <Button name='7' className='btn_number' onClick={handleNumerical(7)} />
+        <Button name='8' className='btn_number' onClick={handleNumerical(8)} />
+        <Button name='9' className='btn_number' onClick={handleNumerical(9)} />
         <Button name='×' onClick={handleOperator(OperatorType.Multiply)} />
       </div>
       <div className='buttons_std__4'>
-        <Button name='4' onClick={handleNumerical(4)} />
-        <Button name='5' onClick={handleNumerical(5)} />
-        <Button name='6' onClick={handleNumerical(6)} />
+        <Button name='4' className='btn_number' onClick={handleNumerical(4)} />
+        <Button name='5' className='btn_number' onClick={handleNumerical(5)} />
+        <Button name='6' className='btn_number' onClick={handleNumerical(6)} />
         <Button name='-' onClick={handleOperator(OperatorType.Subtract)} />
       </div>
       <div className='buttons_std__5'>
-        <Button name='1' onClick={handleNumerical(1)} />
-        <Button name='2' onClick={handleNumerical(2)} />
-        <Button name='3' onClick={handleNumerical(3)} />
+        <Button name='1' className='btn_number' onClick={handleNumerical(1)} />
+        <Button name='2' className='btn_number' onClick={handleNumerical(2)} />
+        <Button name='3' className='btn_number' onClick={handleNumerical(3)} />
         <Button name='+' onClick={handleOperator(OperatorType.Add)} />
       </div>
       <div className='buttons_std__6'>
         <Button name='+ / -' onClick={handleOperator(OperatorType.SwitchSign)} />
-        <Button name='0' onClick={handleNumerical(0)} />
+        <Button name='0' className='btn_number' onClick={handleNumerical(0)} />
         <Button name='.' onClick={handleOperator(OperatorType.Point)} />
         <Button name='=' onClick={handleOperator(OperatorType.Equals)} />
       </div>

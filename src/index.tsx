@@ -4,15 +4,18 @@ import { RecoilRoot } from 'recoil';
 
 import '@/assets/stylesheets/common.scss';
 
+import Header from '@/components/header/Header';
+import MenuSlider from '@/components/header/MenuSlider';
 import Display from '@/components/display/Display';
 import StandardButtons from '@/components/buttons/StandardButtons';
 import EngineeringButtons from '@/components/buttons/EngineeringButtons';
-import Header from '@/components/header/Header';
 import CalculateLogic, { CalculateInput, InputType, OperatorType } from '@/assets/logic/calculate_logic';
 
 const Root: React.FC = () => {
+  const [isOpen, setOpen] = useState(false);
   const [inputs, setInputs] = useState<Array<CalculateInput>>([]);
   const state = CalculateLogic.getState(inputs);
+
 
   // TODO: useCallback을 안 쓴 것과 쓴 것의 차이도 직접 해보고 느끼는 게 개발에 도움이 됩니다.
   const handleNumerical = (value: number) => () => {
@@ -29,9 +32,10 @@ const Root: React.FC = () => {
 
   return (
     <div className='calculator'>
-      <Header />
+      <Header isOpen={isOpen} setOpen={setOpen} />
+      <MenuSlider visible={isOpen} />
       <Display value={state.displayValue} />
-      <EngineeringButtons
+      <StandardButtons
         handleNumerical={handleNumerical}
         handleOperator={handleOperator}
         handleAllClear={handleAllClear}

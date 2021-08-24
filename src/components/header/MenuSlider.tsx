@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface MenuSliderProps {
-  visible: string;
+  visible: boolean;
 }
 
 const MenuSlider: React.FC<MenuSliderProps> = (
-  visible
+  visible,
 ) => {
   return (
-    <div className={`menu-slider ${visible}`}>
-      {/* <div>
+    <div className={`menu-slider ${visible ? '' : 'invisible'}`}>
+      <div>
         <p>계산기</p>
         <ul>
           <li>표준</li>
@@ -34,7 +34,7 @@ const MenuSlider: React.FC<MenuSliderProps> = (
           <li>압력</li>
           <li>각도</li>
         </ul>
-      </div> */}
+      </div>
     </div>
   );
 };

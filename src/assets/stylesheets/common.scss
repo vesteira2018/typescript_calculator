@@ -3,22 +3,32 @@
 
 /* COMMON */
 * { font-family: 'Nanum Gothic', sans-serif; margin:0px; padding: 0px; box-sizing: border-box; }
-.calculator { width: 438px; margin: 0px auto; background-color: #323232; align-items: center; padding: 10px; }
+.calculator { width: 438px; margin: 0px auto; background-color: #323232; align-items: center; padding: 10px; overflow: hidden; }
+.visible { display: block; }
+.invisible { display: none; }
 
 /* MENU */
-.header { height: 70px; display: flex; color: #FFFFFF; align-items: center; margin-bottom: 10px; 
-  .title { margin-left: 10px; font-size: 20px; }
-  .menu-slider { background-color: #323232; z-index: 1;
-    ul { list-style: none; }
+.menu-slider { background-color: #323232; z-index: 1; color: #FFFFFF; margin-bottom: 5px;
+  p { font-size: 20px; padding: 10px 5px; font-weight: 700; }
+  ul { list-style: none; 
+    li { padding: 5px; transition: 0.5s; cursor: pointer;
+      &:hover { background-color: #bbbbbb; font-weight: 700; }
+    }
   }
+}
+.header { height: 70px; display: flex; color: #FFFFFF; margin-bottom: 10px; align-items: center;
+  .title { margin-left: 10px; font-size: 25px; align-items: center; }
 }
 
 /* DISPLAY */
-.display { background-color: #FFFFFF; width: 412px; height: 100px; border-radius: 10px; font-size: 50px; text-align: right; margin: 2px; border: none; outline: none; padding: 25px 20px; }
+.display { background-color: #FFFFFF; width: 412px; height: 100px; border-radius: 10px; font-size: 50px; text-align: right; margin: 5px; border: none; outline: none; padding: 25px 20px; }
 
 /* BUTTON */
 button {
-  justify-content: center; align-items: center;
+  justify-content: center; align-items: center; cursor: pointer;
+}
+.btn_number {
+  background-color: #bbbbbb;
 }
 
 .standard_buttons {
